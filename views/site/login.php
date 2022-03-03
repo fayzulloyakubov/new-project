@@ -38,6 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <?php
 $this->registerCss("
     .login-box-body{
+        margin-top:200px;
         box-shadow: 0px 2px 10px;
         padding: 5px 30px;
         border-radius: 4px;
