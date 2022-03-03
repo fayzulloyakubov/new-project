@@ -1,0 +1,28 @@
+export const items = {
+    id: "",
+    processing_time_id: "",
+    equipment_group_id: "",
+    start_work: "",
+    end_work: "",
+    planned_stops: [],
+    unplanned_stops: [],
+    equipmentGroup: {
+        equipments: [],
+        product_list: [],
+    },
+    products: [{
+        label: "",
+        value: "",
+        qty: "",
+        fact_qty: "",
+        product_id: "",
+        product_lifecycle_id: "",
+        repaired: [],
+        scrapped: [],
+    }],
+    equipments: [],
+    is_change: true,
+    lifecycle: "",
+    bypass: "",
+    target_qty: 0,
+};
