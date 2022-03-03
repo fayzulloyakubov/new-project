@@ -11,7 +11,7 @@ use yii\web\Response;
 
 class MenuController extends ActiveController
 {
-    public $modelClass = 'app\modules\settings\models\Menu';
+    public $modelClass = 'app\models\Users';
 
     public $enableCsrfValidation = false;
 
@@ -40,7 +40,7 @@ class MenuController extends ActiveController
             'verbs' => [
                 'class' => VerbFilter::class,
                 'actions' => [
-                    'api-actions' => ['GET'],
+                    'left' => ['GET'],
                 ],
             ],
             [
@@ -57,6 +57,7 @@ class MenuController extends ActiveController
         $request = Yii::$app->request;
         $get = $request->get();
         $type = $get["type"];
+        \yii\helpers\VarDumper::dump($type,10,true);die();
         $user = Yii::$app->user->identity->id;
         $response = [ "status" => true];
         switch ($type){

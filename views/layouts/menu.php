@@ -14,7 +14,6 @@ use yii\web\JqueryAsset;
 
 AppAsset::register($this);
 ReactAsset::$reactFileName = 'menuList';
-ReactAsset::$reactCssFileName = 'document';
 ReactAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -97,6 +96,7 @@ ReactAsset::register($this);
 
         <div class="sidebar">
             <nav class="mt-2">
+                <div id="root"></div>   // menu olib api dan olib kelish kerak
                 <?php
                 $module = Yii::$app->controller->module->id;
                 $controller = Yii::$app->controller->id;

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {render} from "react-dom";
 import axios from "axios";
-const API_URL = window.location.protocol + "//" + window.location.host + "/api/Menus/";
+const API_URL = window.location.protocol + "//" + window.location.host + "/api/menus/";
 
 class MenuList extends Component {
     constructor(props) {

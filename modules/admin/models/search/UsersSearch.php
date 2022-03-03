@@ -2,6 +2,7 @@
 
 namespace app\modules\admin\models\search;
 
+use app\models\BaseModel;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use app\models\Users;
@@ -46,6 +47,7 @@ class UsersSearch extends Users
                 "u.username",
                 "u.status",
             ])
+            ->where(['status' => BaseModel::STATUS_ACTIVE])
             ->orderBy(["u.id" => SORT_DESC]);
 
         $dataProvider = new ActiveDataProvider([

@@ -50,24 +50,12 @@ return [
                 [
                     'class' => 'yii\rest\UrlRule',
                     'controller' => [
-                        'user',
+                        'menu',
                     ],
                     'extraPatterns' => [
-                        'POST index' => 'index',
-                        'GET index' => 'index',
-                        'OPTIONS index' => 'index',
-
-                        'POST fetch-list' => 'fetch-list',
-                        'GET fetch-list' => 'fetch-list',
-                        'OPTIONS fetch-list' => 'fetch-list',
-
-                        'POST search' => 'search',
-                        'GET search' => 'search',
-                        'OPTIONS search' => 'search',
-
-                        'POST save-properties' => 'save-properties',
-                        'GET save-properties' => 'save-properties',
-                        'OPTIONS save-properties' => 'save-properties',
+                        'POST left' => 'left',
+                        'GET left' => 'left',
+                        'OPTIONS left' => 'left',
                     ],
                 ],
                 //  '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
@@ -76,9 +64,7 @@ return [
         'db' => $db,
     ],
     'modules' => [
-        'v1' => [
-            'class' => 'app\api\modules\Module'
-        ],
+        'class' => 'app\api\modules\Module'
     ],
     'params' => $params,
 ];

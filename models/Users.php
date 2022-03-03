@@ -93,6 +93,18 @@ class Users extends BaseModel implements \yii\web\IdentityInterface
         
         return parent::beforeSave($insert);
     }
+    public function afterSave($insert, $changedAttributes)
+    {
+        if ($this->isNewRecord) {
+            $modelUserRefreshTokens = new UserRefreshTokens();
+            $modelUserRefreshTokens->user_id = $this->id;
+            $modelUserRefreshTokens->refresh_token = UserRefreshTokens::generateRefreshToken($this->id);
+            $modelUserRefreshTokens->expire_to = time() + Yii::$app->params['API_ACCESS_TOKEN_PERIOD'];
+            $modelUserRefreshTokens->expire_refresh_token = time() + Yii::$app->params['API_REFRESH_TOKEN_PERIOD'];
+            $modelUserRefreshTokens->status = $modelUserRefreshTokens::STATUS_ACTIVE;
+            $modelUserRefreshTokens->save();
+        }
+    }
 
     /**
      * {@inheritdoc}
