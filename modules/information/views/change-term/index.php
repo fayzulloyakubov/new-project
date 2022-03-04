@@ -12,12 +12,10 @@ $this->title = Yii::t('app', 'Change Terms');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="card change-term-index">
-    <?php if (Yii::$app->user->can('change-term/create')): ?>
     <div class="card-header pull-right no-print">
         <?= Html::a('<span class="fa fa-plus"></span>', ['create'],
         ['class' => 'create-dialog btn btn-sm btn-success', 'id' => 'buttonAjax']) ?>
     </div>
-    <?php endif; ?>
     <div class="card-body">
         <?php Pjax::begin(['id' => 'change-term_pjax']); ?>
             <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -29,7 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+//            'id',
             'old_term_date',
             'new_term_date',
             'change_term_reason:ntext',

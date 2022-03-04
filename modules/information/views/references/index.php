@@ -11,12 +11,10 @@ $this->title = Yii::t('app', 'References');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="card references-index">
-    <?php if (Yii::$app->user->can('references/create')): ?>
     <div class="card-header pull-right no-print">
         <?= Html::a('<span class="fa fa-plus"></span>', ['create'],
         ['class' => 'create-dialog btn btn-sm btn-success', 'id' => 'buttonAjax']) ?>
     </div>
-    <?php endif; ?>
     <div class="card-body">
         <?php Pjax::begin(['id' => 'references_pjax']); ?>
             <?php // echo $this->render('_search', ['model' => $searchModel]); ?>

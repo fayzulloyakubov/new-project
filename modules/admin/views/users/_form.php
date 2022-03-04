@@ -18,7 +18,7 @@ use yii\widgets\ActiveForm;
 
     <div class="row">
         <div class="col-lg-3">
-            <?php echo $form->field($model, 'username')->textInput(['maxlength' => true]) ?>
+            <?php echo $form->field($model, 'username')->textInput(['autocomplete' => 'off','maxlength' => true]) ?>
         </div>
         <div class="col-lg-3">
             <?php echo $form->field($model, 'password')->passwordInput(['maxlength' => true]) ?>

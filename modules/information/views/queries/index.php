@@ -13,12 +13,10 @@ $this->title = Yii::t('app', 'Queries');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="card queries-index">
-<!--    --><?php //if (Yii::$app->user->can('queries/create')): ?>
     <div class="card-header pull-right no-print">
         <?= Html::a('<span class="fa fa-plus"></span>', ['create'],
         ['class' => 'create-dialog btn btn-sm btn-success', 'id' => 'buttonAjax']) ?>
     </div>
-<!--    --><?php //endif; ?>
     <div class="card-body">
         <?php Pjax::begin(['id' => 'queries_pjax']); ?>
             <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -30,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+//            'id',
             'queries_name',
             'queries_date',
             'queries_content:ntext',

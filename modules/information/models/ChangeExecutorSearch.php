@@ -60,7 +60,7 @@ class ChangeExecutorSearch extends ChangeExecutor
         $query->andFilterWhere([
             'id' => $this->id,
             'old_executor_date' => $this->old_executor_date,
-            'new_executor_time' => $this->new_executor_date,
+            'new_executor_date' => $this->new_executor_date,
             'status' => $this->status,
             'created_by' => $this->created_by,
             'updated_by' => $this->updated_by,

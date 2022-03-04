@@ -4,8 +4,6 @@
 /* @var $content string */
 
 use app\assets\ReactAsset;
-use app\components\Menu\CustomMenu;
-use app\components\PermissionHelper as P;
 use app\widgets\Alert;
 use app\widgets\MultiLang\MultiLang;
 use yii\helpers\Html;

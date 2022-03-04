@@ -9,10 +9,11 @@ use Yii;
 
 class BaseModel extends Menu
 {
+    // Menyu listini shaklantirish uchun so'rov
+
     public static function getMenuList(){
-        {
-            $query = self::find()
-                ->select([
+
+            $query = self::find()->select([
                     'id',
                     'parent_id',
                     'menu_name AS name',
@@ -37,12 +38,12 @@ class BaseModel extends Menu
             $results = [];
             $i = 0;
             if (!empty($query)) {
-                foreach ($query as $item) {
-                    if (Yii::$app->user->can($item['name'])) {
-                        $results[$i] = $item;
+                foreach ($query as $row) {
+                    if (Yii::$app->user->can($row['name'])) {
+                        $results[$i] = $row;
                         $results[$i]['children'] = [];
-                        if (!empty($item['children'])) {
-                            foreach ($item['children'] as $child) {
+                        if (!empty($row['children'])) {
+                            foreach ($row['children'] as $child) {
                                 if (Yii::$app->user->can($child['name'])) {
                                     $results[$i]['children'][] = $child;
                                 }
@@ -53,6 +54,5 @@ class BaseModel extends Menu
                 }
             }
             return $results;
-        }
     }
 }

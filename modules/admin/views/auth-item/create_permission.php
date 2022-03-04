@@ -25,7 +25,7 @@ use yii\helpers\Html; ?>
     <div class="auth-item-form">
 
         <?php $form = ActiveForm::begin(); ?>
-        <?= $form->field($model,'name')->textInput()?>
+        <?= $form->field($model,'name')->textInput(['autocomplete' => 'off'])?>
         <?= $form->field($model, 'new_permissions')->widget(MultipleInput::className(), [
             'max' => 30,
             'min' => 0,

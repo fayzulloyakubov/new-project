@@ -13,7 +13,7 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(['options' => ['data-pjax' => true, 'class'=> 'customAjaxForm']]); ?>
 
-    <?= $form->field($model, 'reference_name')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'reference_name')->textInput(['autocomplete' => 'off','maxlength' => true]) ?>
 
     <?= $form->field($model, 'reference_date')->widget( DatePicker::class,[
         'data' => $model->reference_date ? date('d.m.Y',($model->reference_date)) : $model->reference_date,

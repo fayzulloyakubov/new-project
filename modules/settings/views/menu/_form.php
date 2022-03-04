@@ -14,7 +14,7 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(['options' => ['data-pjax' => true, 'class'=> 'customAjaxForm']]); ?>
 
-    <?= $form->field($model, 'menu_name')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'menu_name')->textInput(['autocomplete' => 'off','maxlength' => true]) ?>
 
     <?= $form->field($model, 'parent_id')->widget(Select2::class, [
         'data' => Menu::getList(),
@@ -26,9 +26,9 @@ use yii\widgets\ActiveForm;
         ]
     ]);
     ?>
-    <?= $form->field($model, 'icon_name')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'icon_name')->textInput(['autocomplete' => 'off','maxlength' => true]) ?>
 
-    <?= $form->field($model, 'url')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'url')->textInput(['autocomplete' => 'off','maxlength' => true]) ?>
 
     <div class="form-group">
         <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>

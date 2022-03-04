@@ -12,12 +12,10 @@ $this->title = Yii::t('app', 'Change Classifications');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="card change-classification-index">
-<!--    --><?php //if (Yii::$app->user->can('change-classification/create')): ?>
     <div class="card-header pull-right no-print">
         <?= Html::a('<span class="fa fa-plus"></span>', ['create'],
         ['class' => 'create-dialog btn btn-sm btn-success', 'id' => 'buttonAjax']) ?>
     </div>
-<!--    --><?php //endif; ?>
     <div class="card-body">
         <?php Pjax::begin(['id' => 'change-classification_pjax']); ?>
     
@@ -28,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+//            'id',
             'old_classification_date',
             'new_classification_date',
             'change_classification_reason:ntext',

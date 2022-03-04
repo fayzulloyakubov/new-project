@@ -12,12 +12,10 @@ $this->title = Yii::t('app', 'Change Limits');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="card change-limit-index">
-<!--    --><?php //if (Yii::$app->user->can('change-limit/create')): ?>
     <div class="card-header pull-right no-print">
         <?= Html::a('<span class="fa fa-plus"></span>', ['create'],
         ['class' => 'create-dialog btn btn-sm btn-success', 'id' => 'buttonAjax']) ?>
     </div>
-<!--    --><?php //endif; ?>
     <div class="card-body">
         <?php Pjax::begin(['id' => 'change-limit_pjax']); ?>
             <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -29,7 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+//            'id',
             'old_limit_date',
             'new_limit_date',
             'change_limit_reason:ntext',

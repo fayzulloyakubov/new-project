@@ -15,9 +15,9 @@ use yii\widgets\ActiveForm;
 <div class="auth-item-form">
     <?php $form = ActiveForm::begin(['options' => ['data-pjax' => true, 'class'=> 'customAjaxForm']]); ?>
 
-    <?= $form->field($model, 'name_for_user')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'name_for_user')->textInput(['autocomplete' => 'off','maxlength' => true]) ?>
 
-    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'name')->textInput(['autocomplete' => 'off','maxlength' => true]) ?>
 
     <?= $form->field($model, 'description')->textarea(['rows' => 3]) ?>
 
@@ -65,7 +65,7 @@ use yii\widgets\ActiveForm;
     <div class="auth-item-form">
         <?php $form = ActiveForm::begin(['options' => ['data-pjax' => true, 'class'=> 'customAjaxForm']]); ?>
 
-        <?= $form->field($model,'name')->textInput()?>
+        <?= $form->field($model,'name')->textInput(['autocomplete' => 'off'])?>
 
         <?= $form->field($model, 'new_permissions')->widget(CustomMultipleInput::class, [
             'max' => 30,

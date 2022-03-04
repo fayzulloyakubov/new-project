@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'id' => 'login-form',
                 ]); ?>
 
-                <?php echo $form->field($model, 'username')->textInput(['autofocus' => true])->label(Yii::t("app","Login")) ?>
+                <?php echo $form->field($model, 'username')->textInput(['autocomplete' => 'off','autofocus' => true])->label(Yii::t("app","Login")) ?>
 
                 <?php echo $form->field($model, 'password')->passwordInput()->label(Yii::t("app","Password")) ?>
 

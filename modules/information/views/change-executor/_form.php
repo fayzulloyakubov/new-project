@@ -28,7 +28,7 @@ use yii\widgets\ActiveForm;
 
 
     <?= $form->field($model, 'new_executor_date')->widget( DatePicker::class,[
-        'data' => $model->new_executor_time ? date('d.m.Y',($model->new_executor_time)) : $model->new_executor_time,
+        'data' => $model->new_executor_date ? date('d.m.Y',($model->new_executor_date)) : $model->new_executor_date,
         'removeButton' => false,
         'options' => [
             'autocomplete' => 'off',

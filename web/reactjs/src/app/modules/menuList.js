@@ -36,7 +36,8 @@ class Index extends React.Component {
                             <li className={item?.children?.length > 0 ? "nav-item menu-is-opening menu-open" : "nav-item"} key={key}>
                                 <a href={item?.children?.length === 0 ? item.url : "#"} className={"nav-link"} aria-expanded={false}>
                                     <i className={item.icon+" nav-icon"}/>
-                                    <p>{item.name}</p>
+                                    <p>{item.name}<i className={item?.children?.length > 0 ? "fas fa-angle-left right" : ""}/></p>
+
                                 </a>
                                 <ul className="nav nav-treeview">
                                     {
