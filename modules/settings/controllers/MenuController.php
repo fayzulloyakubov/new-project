@@ -219,24 +219,7 @@ class MenuController extends BaseController
         }
     }
 
-    public function actionExportExcel(){
-        header('Content-Type: application/vnd.ms-excel');
-        $filename = "menu_".date("d-m-Y-His").".xls";
-        header('Content-Disposition: attachment;filename='.$filename .' ');
-        header('Cache-Control: max-age=0');
-        \moonland\phpexcel\Excel::export([
-            'models' => Menu::find()->select([
-                'id',
-            ])->all(),
-            'columns' => [
-                'id',
-            ],
-            'headers' => [
-                'id' => 'Id',
-            ],
-            'autoSize' => true,
-        ]);
-    }
+
     /**
      * Finds the Menu model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
