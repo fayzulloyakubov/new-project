@@ -90,7 +90,7 @@ ReactAsset::register($this);
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a class="brand-link text-center" href="/">
-            <span class="brand-text font-weight-center">NEW PROJECT</span>
+            <span class="brand-text font-weight-center"><?php echo Yii::t("app","NEW PROJECT");?></span>
         </a>
         <div class="sidebar">
             <nav class="mt-2">
@@ -146,7 +146,7 @@ ReactAsset::register($this);
         </div>
     </div>
     <footer class="main-footer no-print">
-        <strong class="text-orange">&copy; New Project - </strong> <?= date('Y') ?>
+        <strong class="text-orange">&copy; <?=Yii::t("app","New Project");?> - </strong> <?= date('Y') ?>
     </footer>
 
     <!-- Control Sidebar -->

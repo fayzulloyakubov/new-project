@@ -11,7 +11,7 @@ class BaseModel extends Menu
 {
     public static function getMenuList(){
         {
-            $items = self::find()
+            $query = self::find()
                 ->select([
                     'id',
                     'parent_id',
@@ -36,8 +36,8 @@ class BaseModel extends Menu
                 ->all();
             $results = [];
             $i = 0;
-            if (!empty($items)) {
-                foreach ($items as $item) {
+            if (!empty($query)) {
+                foreach ($query as $item) {
                     if (Yii::$app->user->can($item['name'])) {
                         $results[$i] = $item;
                         $results[$i]['children'] = [];
