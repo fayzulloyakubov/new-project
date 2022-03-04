@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+//            'id',
             'menu_name',
             'icon_name',
            [
@@ -60,12 +60,12 @@ $this->params['breadcrumbs'][] = $this->title;
                     'contentOptions' => ['class' => 'no-print text-center','style' => 'width:100px;'],
                     'visibleButtons' => [
                         'view' => Yii::$app->user->can('menu/view'),
-                        'update' => function($model) {
-                            return Yii::$app->user->can('menu/update') && $model->status < $model::STATUS_SAVED;
-                        },
-                        'delete' => function($model) {
-                            return Yii::$app->user->can('menu/delete') && $model->status < $model::STATUS_SAVED;
-                        }
+//                        'update' => function($model) {
+//                            return Yii::$app->user->can('menu/update') && $model->status < $model::STATUS_SAVED;
+//                        },
+//                        'delete' => function($model) {
+//                            return Yii::$app->user->can('menu/delete') && $model->status < $model::STATUS_SAVED;
+//                        }
                     ],
                     'buttons' => [
                         'update' => function ($url, $model) {
