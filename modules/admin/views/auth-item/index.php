@@ -14,12 +14,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
 ?>
     <div class="auth-item-index card">
-        <!--    --><?php //if (Yii::$app->user->can('auth-item/create')): ?>
         <p class="pull-right no-print">
             <?= Html::a('<span class="fa fa-plus"></span>', ['create'],
                 ['class' => 'create-dialog btn btn-sm btn-success', 'id' => 'buttonAjax']) ?>
         </p>
-        <!--    --><?php //endif; ?>
 
         <?php Pjax::begin(['id' => 'auth-item_pjax']); ?>
 

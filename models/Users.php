@@ -9,6 +9,7 @@ use Yii;
  * This is the model class for table "users".
  *
  * @property int $id
+ * @property string|null $name
  * @property string|null $username
  * @property string|null $password
  * @property string|null $auth_key
@@ -66,7 +67,7 @@ class Users extends BaseModel implements \yii\web\IdentityInterface
     public function rules()
     {
         return [
-            [['status', 'created_at', 'updated_at', 'created_by', 'updated_by'], 'default', 'value' => null],
+            [['status', 'created_at', 'updated_at', 'created_by', 'updated_by','name'], 'default', 'value' => null],
             [['status', 'created_at', 'updated_at', 'created_by', 'updated_by'], 'integer'],
             [['username', 'password', 'auth_key'], 'string', 'max' => 255],
             [['username'], 'unique'],

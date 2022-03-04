@@ -33,8 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'menu_name',
-            'table_name',
-            'role_name',
+            'icon_name',
            [
                 'attribute' => 'status',
                 'value' => function($model){

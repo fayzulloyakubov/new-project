@@ -89,132 +89,14 @@ ReactAsset::register($this);
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
-        <a class="brand-link" href="/">
-            <img src="/web/img/noimage.png" alt="Logo" class="brand-image img-circle elevation-3">
-            <span class="brand-text font-weight-light">NP</span>
+        <a class="brand-link text-center" href="/">
+            <span class="brand-text font-weight-center">NEW PROJECT</span>
         </a>
-
         <div class="sidebar">
             <nav class="mt-2">
-                <div id="root"></div>   // menu olib api dan olib kelish kerak
-                <?php
-                $module = Yii::$app->controller->module->id;
-                $controller = Yii::$app->controller->id;
-                $action = Yii::$app->controller->action->id;
-                echo CustomMenu::widget([
-                    'options' => [
-                        'class' => 'nav nav-pills nav-sidebar flex-column tree',
-                        'data-widget' => 'treeview',
-                        'role' => "menu",
-                        'data-accordion' => "false"
-                    ],
-                    'items' => [
-                        [
-                            'label' => Yii::t('app', 'Administrator'),
-                            'url' => ['#'],
-                            'options' => ['class' => 'nav-item'],
-                            'template' => '<a href="{url}" class="{linkClass}"><i class="nav-icon fa fa-users-cog"></i><p>{label}<i class="fas fa-angle-left right"></i></p></a>',
-                            'visible' => P::can("admin"),
-                            'items' => [
-                                [
-                                    'label' => Yii::t('app', 'Users'),
-                                    'url' => '/admin/users/index',
-                                    'options' => ['class' => 'nav-item'],
-                                    'active' => $controller == 'users' && $action == 'index',
-                                    'template' => '<a href="{url}" class="{linkClass}"><i class="fa fa-user nav-icon"></i><p>{label}</p></a>',
-                                ],
-                                [
-                                    'label' => Yii::t('app', 'Roles'),
-                                    'url' => '/admin/auth-item/index',
-                                    'options' => ['class' => 'nav-item'],
-                                    'active' => $controller == 'auth-item' && $action == 'index',
-                                    'template' => '<a href="{url}" class="{linkClass}"><i class="fa fa-tasks nav-icon"></i><p>{label}</p></a>',
-                                        'visible' => P::can('auth-item/index'),
-                                ],
-                                [
-                                    'label' => Yii::t('app', 'Permissions'),
-                                    'url' => '/admin/auth-item/permissions',
-                                    'options' => ['class' => 'nav-item'],
-                                    'active' => $controller == 'auth-item' && $action == 'permissions',
-                                    'template' => '<a href="{url}" class="{linkClass}"><i class="fa fa-shield-alt nav-icon"></i><p>{label}</p></a>',
-                                        'visible' => P::can('auth-item/permissions'),
-
-                                ],
-                            ],
-                        ],
-                        [
-                            'label' => Yii::t('app', 'Main'),
-                            'url' => '/',
-                            'options' => ['class' => 'nav-item'],
-                            'visible' => P::can("main-index"),
-                            'template' => '<a href="{url}" class="{linkClass}"><i class="fa fa-home nav-icon"></i><p>{label}</p></a>',
-                        ],
-                        [
-                            'label' => Yii::t('app', 'References'),
-                            'url' => '/information/references/index',
-                            'options' => ['class' => 'nav-item'],
-                            'visible' => P::can(""),
-                            'template' => '<a href="{url}" class="{linkClass}"><i class="fa fa-file nav-icon"></i><p>{label}</p></a>',
-                        ],
-                        [
-                            'label' => Yii::t('app', 'Issues'),
-                            'url' => '/information/issues/index',
-                            'options' => ['class' => 'nav-item'],
-                            'visible' => P::can(""),
-                            'template' => '<a href="{url}" class="{linkClass}"><i class="fa fa-comments nav-icon"></i><p>{label}</p></a>',
-                        ],
-                        [
-                            'label' => Yii::t('app', 'Queries'),
-                            'url' => ['#'],
-                            'options' => ['class' => 'nav-item'],
-                            'template' => '<a href="{url}" class="{linkClass}"><i class="nav-icon fa fa-bell"></i><p>{label}<i class="fas fa-angle-left right"></i></p></a>',
-                            'visible' => P::can("admin"),
-                            'items' => [
-                                [
-                                    'label' => Yii::t('app', 'Change Term'),
-                                    'url' => '/information/change-term/index',
-                                    'options' => ['class' => 'nav-item'],
-                                    'active' => $controller == 'change-term' && $action == 'index',
-                                    'template' => '<a href="{url}" class="{linkClass}"><i class="fa fa-file-alt nav-icon"></i><p>{label}</p></a>',
-                                ],
-                                [
-                                    'label' => Yii::t('app', 'Change Executor'),
-                                    'url' => '/information/change-executor/index',
-                                    'options' => ['class' => 'nav-item'],
-                                    'active' => $controller == 'change-executor' && $action == 'index',
-                                    'template' => '<a href="{url}" class="{linkClass}"><i class="fa fa-file-alt nav-icon"></i><p>{label}</p></a>',
-                                ],
-                                [
-                                    'label' => Yii::t('app', 'Check Result'),
-                                    'url' => '/information/check-result/index',
-                                    'options' => ['class' => 'nav-item'],
-                                    'active' => $controller == 'check-result' && $action == 'index',
-                                    'template' => '<a href="{url}" class="{linkClass}"><i class="fa fa-file-alt nav-icon"></i><p>{label}</p></a>',
-                                ],
-                                [
-                                    'label' => Yii::t('app', 'Change Classification'),
-                                    'url' => '/information/change-classification/index',
-                                    'options' => ['class' => 'nav-item'],
-                                    'active' => $controller == 'change-classification' && $action == 'index',
-                                    'template' => '<a href="{url}" class="{linkClass}"><i class="fa fa-file-alt nav-icon"></i><p>{label}</p></a>',
-                                ],
-                                [
-                                    'label' => Yii::t('app', 'Change Limit'),
-                                    'url' => '/information/change-term/index',
-                                    'options' => ['class' => 'nav-item'],
-                                    'active' => $controller == 'change-term' && $action == 'index',
-                                    'template' => '<a href="{url}" class="{linkClass}"><i class="fa fa-file-alt nav-icon"></i><p>{label}</p></a>',
-                                ],
-                            ],
-                        ],
-                    ],
-
-                    'linkTemplate' => '<a href="{url}"><i class="fas fa-circle-o"></i> {label}</a>',
-                    'submenuTemplate' => "\n<ul class='nav nav-treeview'>\n{items}\n</ul>\n",
-                    'encodeLabels' => false,
-                    'activateParents' => true,
-                ]);
-                ?>
+                <div id="root">
+                <!--menuList-->
+                </div>
             </nav>
         </div>
     </aside>

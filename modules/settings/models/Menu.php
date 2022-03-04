@@ -13,6 +13,8 @@ use yii\helpers\ArrayHelper;
  * @property string $menu_name
  * @property string $table_name
  * @property string $role_name
+ * @property string $icon_name
+ * @property string $url
  * @property int $status
  * @property int $created_by
  * @property int $updated_by
@@ -38,7 +40,7 @@ class Menu extends BaseModel
     public function rules()
     {
         return [
-            [['status', 'created_by', 'updated_by', 'created_at', 'updated_at', 'parent_id'], 'default', 'value' => null],
+            [['status', 'created_by', 'updated_by', 'created_at', 'updated_at', 'parent_id','icon_name','url'], 'default', 'value' => null],
             [['status', 'created_by', 'updated_by', 'created_at', 'updated_at', 'parent_id'], 'integer'],
             [['menu_name', 'table_name', 'role_name'], 'string', 'max' => 255],
             [['parent_id'], 'exist', 'skipOnError' => true, 'targetClass' => Menu::className(), 'targetAttribute' => ['parent_id' => 'id']],
@@ -61,6 +63,8 @@ class Menu extends BaseModel
             'created_at' => Yii::t('app', 'Created At'),
             'updated_at' => Yii::t('app', 'Updated At'),
             'parent_id' => Yii::t('app', 'Parent ID'),
+            'icon_name' => Yii::t('app', 'Icon Name'),
+            'url' => Yii::t('app', 'Url'),
         ];
     }
 
@@ -75,7 +79,17 @@ class Menu extends BaseModel
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getMenus()
+    public function getParent()
+    {
+        return $this->hasOne(Menu::className(), ['id' => 'parent_id']);
+    }
+
+    /**
+     * Gets query for [[Menus]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getChildren()
     {
         return $this->hasMany(Menu::className(), ['parent_id' => 'id']);
     }

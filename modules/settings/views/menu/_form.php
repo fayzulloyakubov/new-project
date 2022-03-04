@@ -16,10 +16,6 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'menu_name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'table_name')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'role_name')->textInput(['maxlength' => true]) ?>
-
     <?= $form->field($model, 'parent_id')->widget(Select2::class, [
         'data' => Menu::getList(),
         'options' => [
@@ -30,6 +26,10 @@ use yii\widgets\ActiveForm;
         ]
     ]);
     ?>
+    <?= $form->field($model, 'icon_name')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'url')->textInput(['maxlength' => true]) ?>
+
     <div class="form-group">
         <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>
     </div>

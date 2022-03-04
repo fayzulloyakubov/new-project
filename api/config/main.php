@@ -49,13 +49,11 @@ return [
             'rules' => [
                 [
                     'class' => 'yii\rest\UrlRule',
-                    'controller' => [
-                        'menu',
-                    ],
+                    'controller' => ['version/menu'],
                     'extraPatterns' => [
-                        'POST left' => 'left',
-                        'GET left' => 'left',
-                        'OPTIONS left' => 'left',
+                        'POST index' => 'index',
+                        'GET index' => 'index',
+                        'OPTIONS index' => 'index',
                     ],
                 ],
                 //  '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
@@ -64,7 +62,9 @@ return [
         'db' => $db,
     ],
     'modules' => [
-        'class' => 'app\api\modules\Module'
+       'version' => [
+           'class' => 'app\api\modules\version\Module'
+       ]
     ],
     'params' => $params,
 ];

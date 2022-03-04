@@ -53,7 +53,7 @@ let all = {
     name: 'all',
     mode: "development",
     entry: {
-        document: `${SRC_DIR}/app/menuList.js`,
+        menuList: `${SRC_DIR}/app/menu.js`,
     },
     output: {
         path: `${DIST_DIR}/app`,
@@ -66,7 +66,7 @@ let menuList = {
         filename: './app/menuList.bundle.js',
     },
     name: 'menuList',
-    entry: `./src/app/menuList.js`,
+    entry: `./src/app/menu.js`,
     mode: 'development',
 };
 

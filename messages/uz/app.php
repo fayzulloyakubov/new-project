@@ -17,9 +17,9 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'Active' => 'Фаол',
-    'Add Info' => 'Изоҳ',
-    'Administrator' => 'Администратор',
+    'Active' => 'Faol',
+    'Add Info' => 'Izoh',
+    'Administrator' => 'Administrator',
     'Are you sure you want to delete this item?' => '',
     'Auth Assignments' => '',
     'Auth Items' => '',
@@ -28,7 +28,7 @@ return [
     'Back' => 'Ортга',
     'Bolalarini tanlang' => '',
     'Category' => 'Категория',
-    'Change Classification' => 'Таснифни ўзгартириш',
+    'Change Classification' => 'Tasnifni o\'zgartitish',
     'Change Classification Reason' => 'Таснифни ўзгартириш сабаби',
     'Change Classifications' => 'Таснифларни ўзгартириш',
     'Change Executor' => 'Ижрочини ўзгартириш',
@@ -59,6 +59,7 @@ return [
     'Create Users' => '',
     'Created At' => 'Яратиган вақти',
     'Created By' => 'Ким томонидан яратилган',
+    'Connection' => 'Боғланиш',
     'Data' => '',
     'Delete' => 'Ўчирилди',
     'Deleted' => 'Ўчирилган',
