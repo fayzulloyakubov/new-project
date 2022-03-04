@@ -9,7 +9,7 @@ use Yii;
 
 class BaseModel extends Menu
 {
-    // Menyu listini shaklantirish uchun so'rov
+    // Menyu listini shakllantirish uchun so'rov
 
     public static function getMenuList(){
 
